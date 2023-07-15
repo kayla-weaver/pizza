@@ -1,19 +1,19 @@
-# _{Pizza Parlor}_
+# _Pizza Parlor_
 
-#### By _**{Kayla Weaver}**_
+#### By _**Kayla Weaver**_
 
-#### _{A website to order pizza from!}_
+#### _A website to order pizza from!_
 
 ## Technologies Used
 
 * Javascript 
 * HTML
 * CSS 
-* 
+* Bootstrap
 
 ## Description
 
-_{This website will allow you to choose one or morw pizza toppings, a pizza size, and show the final cost }_
+_This website will allow you to choose one or morw pizza toppings, a pizza size, and show the final cost _
 
 ## Setup/Installation Requirements
 

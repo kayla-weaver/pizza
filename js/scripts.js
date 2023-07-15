@@ -2,7 +2,9 @@
 function Pizza (topping, size){
     this.topping = topping;
     this.size = size;
+    
 }
+
 
 
 
@@ -21,4 +23,4 @@ window.addEventListener("load", function(){
     }
   })
   document.getElementById("result").innerText =`You selected these kinds of toppings: ${selectedToppings}`
-}
+  }
