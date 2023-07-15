@@ -4,7 +4,8 @@ code: function Pizza(topping(s), size) {
 this.topping  topping;
 this.size = size;
 }
-const  veggie =  new  Pizza ("veggie", 15);
+const  veggie =  new  Pizza (["veggie"], "medium");
+expected output: pizza {toppings: [veggie],size: "medium"}
 
 
 
