@@ -1,10 +1,19 @@
 //business logic
-function Pizza (topping, size){
-    this.topping = topping;
+function Pizza (veggies, meats, size){
+    this.veggies = veggies;
+    this.meats = meats;
     this.size = size;
-    
+    console.log("Pizzaaaa")
 }
-
+let cost = {
+    price: ""
+    sayPrice: function(){
+        console.log("Your price today is" + "" + this.price);
+    }
+}
+let pizzaCost = object.create(Cost);
+pizza.cost = 
+pizza.sayPrice();
 
 
 
@@ -19,7 +28,8 @@ window.addEventListener("load", function(){
     const toppingsList = document.getElementsByName("toppings");
   toppingsList.forEach(function(toppings){
     if (toppings.checked){
-      selectedToppings.push(toppings.value)
+      selectedToppings.push(toppings.count)
+      console.log("toppings.checked", toppings.checked);
     }
   })
   document.getElementById("result").innerText =`You selected these kinds of toppings: ${selectedToppings}`
