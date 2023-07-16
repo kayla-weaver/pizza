@@ -26,8 +26,8 @@ this should open the project, you can run it live by opening it in VS code using
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* Still working on getting input gathered from forms
+* Price not yet showing up
 
 ## License
 
