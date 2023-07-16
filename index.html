@@ -11,12 +11,12 @@
         <h4>All pizzas come with our housemade vegan cheese blend unless requested otherwise</h4>
         <h3>Veggies 25¢</h3>
         <label for="artichokes">Artichokes</label>
-        <input type="checkbox" class = "veggieCheckbox" id="veggies" name="toppings" value="artichokes"><br>
+        <input type="checkbox" class = "veggieCheckbox" id="artichokes" name="artichokes" value="artichokes"><br>
         <label for="bellpepper">Bell Pepper</label>
-        <input type="checkbox" class = "veggieCheckbox" id="veggies" name="toppings" value="bellpepper"><br>
+        <input type="checkbox" class = "bellpepper" id="bellpepper" name="bellpepper" value="bellpepper"><br>
         <label for="broccoli">Broccoli</label>
-        <input type="checkbox" class = "veggieCheckbox" id="veggies" name="toppings" value="broccoli"><br>
-        <label for="corn">Corn</label>
+        <input type="checkbox" class = "broccoli" id="broccoli" name="broccoli" value="broccoli"><br>
+        <!-- <label for="corn">Corn</label>
         <input type="checkbox" class = "veggieCheckbox" id="veggies" name="toppings" value="corn"><br>
         <label for="garlic">Garlic</label>
         <input type="checkbox" class = "veggieCheckbox" id="veggies" name="toppings" value="garlic"><br>
@@ -31,9 +31,8 @@
         <label for="pineapple">Pineapple</label>
         <input type="checkbox" class = "veggieCheckbox" id="veggies" name="toppings" value="pineapple"><br>
         <label for="tomatoes">Tomatoes</label>
-        <input type="checkbox"class = "veggieCheckbox" id="veggies" name="toppings" value="tomatoes"><br>
-    </form>    
-    <form id="meatsForm"> 
+        <input type="checkbox"class = "veggieCheckbox" id="veggies" name="toppings" value="tomatoes"><br> -->
+   
         <h3>"Meats" $1.00</h3>
         <h5>All Vegan all the time!</h5>
         <label for="bacon">Canadian "Bacon"</label>
@@ -44,8 +43,7 @@
         <input type="checkbox" id="sausage" name="toppings" value="sausage"><br>
         <label for="pepperoni">"Pepperoni"</label>
         <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni"><br>
-    </form>
-    <form id='sizeForm' >
+
         <h3>Sizes</h3>
         <label for="tiny">Baby tiny small 3" $3</label>
         <input type="radio" id="tiny" name="sizes" value="tiny"><br>
@@ -57,7 +55,8 @@
         <input type="radio" id="large" name="sizes" value="large"><br>
         <label for="xlarge">Huge 34" $25</label>
         <input type="radio" id="xlarge" name="sizes" value="xlarge"><br>
-        <button type='submit' class='btn'>submit</button>
+        
     </form>
+    <button type='submit' form="toppingForm" class='btn'>submit</button>
 </body>
 </html>
