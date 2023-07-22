@@ -3,12 +3,10 @@ function Pizza(toppings, size) {
     this.toppings = toppings;
     this.size = size;
     this.price = 0;
-    console.log("Pizzaaaa");
 }
 let Cost = {
     price: "",
     sayPrice: function () {
-        console.log("Your price today is" + "" + this.price);
     },
 };
 
@@ -27,6 +25,7 @@ Pizza.prototype.calculateCost = function(){
 
     cost += this.toppings.length;
     this.price = cost;
+    Cost.price = cost;
 };
 
 
@@ -42,18 +41,19 @@ function handleVeggieSubmission(event) {
         if (size.checked === true){
             selectedSize = size.value; 
         }
-    })
-    
     const toppings = document.getElementsByName("toppings")
     let selectedToppings = [];
     toppings.forEach(function(topping){
         if (topping.checked === true){
-            selectedToppings.push(topping.value)
+            selectedToppings.push(topping.value);
         }
     })
 
-    let newPizza = new Pizza(selectedToppings, selectedSize)
-    newPizza.calculateCost()
+    let newPizza = new Pizza(selectedToppings, selectedSize);
+    newPizza.calculateCost();
+    const displayCost= document.getElementById("price");
+    displayCost.innerText = `Your total today is $ ${Cost.price}! Thank you for shopping with us today! :)`
+    })
 }
 
 window.addEventListener("load", function () {
