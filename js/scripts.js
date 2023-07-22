@@ -16,12 +16,17 @@ Pizza.prototype.calculateCost = function(){
     // all the logic to determine price
     let cost = 0;
     if (this.size === "tiny"){
-        cost += 5
+        cost += 3
     } else if (this.size === "small"){
-        cost += 6
-    }
+        cost += 8
+    } else if (this.size ===  "medium"){
+        cost += 9
+    } else if (this.size === "large"){
+        cost += 10
+    } else if (this.size === "xlarge")
+        cost += 25
 
-    cost += this.toppings.length * 5;
+    cost += this.toppings.length;
     this.price = cost;// whatever price has been calculated.
 };
 
@@ -71,6 +76,7 @@ function handleVeggieSubmission(event) {
     // const veggiesTotalCost = veggiesTopping();
 
     const pizzaSizes = document.getElementsByName("sizes")
+    console.log(pizzaSizes);
     let selectedSize = undefined;
     pizzaSizes.forEach(function(size){
         if (size.checked === true){
