@@ -1,8 +1,8 @@
 //business logic
-function Pizza(veggies, meats, size) {
-    this.veggies = veggies;
-    this.meats = meats;
+function Pizza(toppings, size) {
+    this.toppings = toppings;
     this.size = size;
+    this.price = 0;
     console.log("Pizzaaaa");
 }
 let Cost = {
@@ -12,54 +12,88 @@ let Cost = {
     },
 };
 
-function veggiesTopping() {
-    const veggieList = ["artichoke", "bellpepper", "broccoli"];
-    var checkboxes = document.querySelectorAll(".veggieCheckbox");
-    var count = 0;
-    console.log("veggiesTopping");
-    document.getElementById("toppingForm").onclick = function () {
-        console.log("Something like that");
-        for (var i = 0; i < checkboxes.length; i++) {
-            checkboxes[i].addEventListener("click", function () {
-                console.log("Adding event listener");
-                if (this.checked == true) {
-                    console.log("chegged");
-                    count++;
-                } else {
-                    console.log("Not chegged");
-                    count--;
-                }
-                document.getElementById("veggieCheckbox").innerHTML = count;
-            });
-        }
-    };
-}
+Pizza.prototype.calculateCost = function(){
+    // all the logic to determine price
+    let cost = 0;
+    if (this.size === "tiny"){
+        cost += 5
+    } else if (this.size === "small"){
+        cost += 6
+    }
+
+    cost += this.toppings.length * 5;
+    this.price = cost;// whatever price has been calculated.
+};
+
+
 
 //ui logic
-function displayToppings(event) {
-    const selectedToppings = [];
-    const toppingsList = document.getElementsByName("toppings");
-    toppingsList.forEach(function (toppings) {
-        if (toppings.checked) {
-            selectedToppings.push(toppings.count);
-            console.log("toppings.checked", toppings.checked);
-        }
-    });
-    document.getElementById(
-        "result"
-    ).innerText = `You selected these kinds of toppings: ${selectedToppings}`;
-}
+// function displayToppings(event) {
+//     const selectedToppings = [];
+//     const toppingsList = document.getElementsByName("toppings");
+//     toppingsList.forEach(function (toppings) {
+//         if (toppings.checked) {
+//             selectedToppings.push(toppings.count);
+//             console.log("toppings.checked", toppings.checked);
+//         }
+//     });
+//     document.getElementById(
+//         "result"
+//     ).innerText = `You selected these kinds of toppings: ${selectedToppings}`;
+// }
+
+// function veggiesTopping() {
+//     const veggieList = ["artichoke", "bellpepper", "broccoli"];
+//     var checkboxes = document.querySelectorAll(".veggieCheckbox");
+//     var count = 0;
+//     console.log("veggiesTopping");
+//     document.getElementById("toppingForm").onclick = function () {
+//         console.log("Something like that");
+//         for (var i = 0; i < checkboxes.length; i++) {
+//             checkboxes[i].addEventListener("click", function () {
+//                 console.log("Adding event listener");
+//                 if (this.checked == true) {
+//                     console.log("chegged");
+//                     count++;
+//                 } else {
+//                     console.log("Not chegged");
+//                     count--;
+//                 }
+//                 document.getElementById("veggieCheckbox").innerHTML = count;
+//             });
+//         }
+//     };
+// }
 
 function handleVeggieSubmission(event) {
     event.preventDefault();
-    console.log("prevent default");
-    const veggiesTotalCost = veggiesTopping();
+    // grab data from the forms
+    // const veggiesTotalCost = veggiesTopping();
+
+    const pizzaSizes = document.getElementsByName("sizes")
+    let selectedSize = undefined;
+    pizzaSizes.forEach(function(size){
+        if (size.checked === true){
+            selectedSize = size.value; 
+        }
+    })
+    
+    const toppings = document.getElementsByName("toppings")
+    let selectedToppings = [];
+    toppings.forEach(function(topping){
+        if (topping.checked === true){
+            selectedToppings.push(topping.value)
+        }
+    })
+
+    let newPizza = new Pizza(selectedToppings, selectedSize)
+    newPizza.calculateCost()
+    console.log(newPizza.price)
+    // display cost to user 
 }
 
 window.addEventListener("load", function () {
-    let pizzaCost = Object.create(Cost);
-    pizzaCost.price = pizzaCost.sayPrice();
+    // get form, add event listener for when form submits
     const form = document.getElementById("toppingForm");
-    console.log(form);
     form.addEventListener("submit", handleVeggieSubmission);
 });
