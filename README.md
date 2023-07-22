@@ -9,7 +9,6 @@
 * Javascript 
 * HTML
 * CSS 
-* Bootstrap
 
 ## Description
 
@@ -26,12 +25,12 @@ this should open the project, you can run it live by opening it in VS code using
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* Still working on getting input gathered from forms
+* Price not yet showing up
 
 ## License
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_If you have any problems please feel free to reach out kaylabeth1211@gmail.com_
 
 Copyright (c) 2023 Kayla Weaver
 
