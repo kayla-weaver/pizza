@@ -1,3 +1,27 @@
 .hidden {
     display: none;
 }
+body{
+    background-color: deeppink;
+    color:white;
+}
+h1{
+    background-color: purple;
+    width: fit-content;
+}
+h2{
+    background-color: black;
+    width: fit-content;
+}
+h3{
+    background-color: darkcyan;
+    width: fit-content;
+}
+label{
+    color:black;
+}
+#price{
+    color: blueviolet;
+    float: right;
+    
+}

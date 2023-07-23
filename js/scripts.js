@@ -52,7 +52,7 @@ function handleVeggieSubmission(event) {
     let newPizza = new Pizza(selectedToppings, selectedSize);
     newPizza.calculateCost();
     const displayCost= document.getElementById("price");
-    displayCost.innerText = `Your total today is $ ${Cost.price}! Thank you for shopping with us today! :)`
+    displayCost.innerText = `Your total today is $ ${Cost.price}! Thank you for shopping with us! We hope you enjoy your vegan pizza and come back for more and more! :)`
     })
 }
 
